@@ -67,3 +67,173 @@
 
 </body>
 </html>
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fcf8f5;
+    color: #4a4a4a;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #f3e1dc;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 3px dashed #d9b4ab;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #7d5e58;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    color: #9e7f77;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7d5e58;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d9b4ab;
+}
+
+/* Layout Estrutural */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Área dos Posts */
+.posts {
+    flex: 3;
+}
+
+.post {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.post img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.post h2 {
+    margin: 15px 0 5px 0;
+    color: #5c4440;
+}
+
+.post .data {
+    font-size: 0.85rem;
+    color: #a1a1a1;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.post p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.btn-ler {
+    display: inline-block;
+    background-color: #d9b4ab;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-ler:hover {
+    background-color: #7d5e58;
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.sidebar h3 {
+    color: #7d5e58;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f3e1dc;
+    padding-bottom: 5px;
+}
+
+.sobre-mim img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.sobre-mim p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.categorias ul {
+    list-style: none;
+}
+
+.categorias ul li {
+    margin-bottom: 10px;
+}
+
+.categorias ul li a {
+    text-decoration: none;
+    color: #5c4440;
+}
+
+/* Rodapé */
+footer {
+    background-color: #5c4440;
+    color: #f3e1dc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .post img {
+        height: 200px;
+    }
+}
