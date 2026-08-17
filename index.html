@@ -4,7 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linhas & Retalhos | Blog de Costura</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Base e Limpeza */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #faf8f5;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #5c4440;
+            font-weight: 600;
+        }
+
+        header p {
+            color: #8a736e;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #5c4440;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #d9b4ab;
+        }
+
+        /* Estrutura Principal */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: flex;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* Posts */
+        .posts {
+            flex: 2.5;
+        }
+
+        .post {
+            background: #ffffff;
+            padding: 24px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .post img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .post h2 {
+            margin: 16px 0 6px;
+            color: #2c2c2c;
+            font-size: 1.4rem;
+        }
+
+        .post .data {
+            font-size: 0.8rem;
+            color: #999999;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .post p {
+            color: #555555;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Ações e Botões */
+        .acoes-post {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-ler {
+            color: #5c4440;
+            border: 1px solid #5c4440;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-ler:hover {
+            background-color: #5c4440;
+            color: #ffffff;
+        }
+
+        .btn-curtir {
+            background: none;
+            border: 1px solid #e0e0e0;
+            color: #666666;
+            padding: 7px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .btn-curtir:hover {
+            border-color: #d9b4ab;
+        }
+
+        .btn-curtir.curtido {
+            background-color: #ffebe8;
+            border-color: #e26d5c;
+            color: #e26d5c;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            flex: 1;
+        }
+
+        .sobre-mim, .categorias {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+            margin-bottom: 24px;
+        }
+
+        .sidebar h3 {
+            color: #5c4440;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .sobre-mim img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+
+        .sobre-mim p {
+            font-size: 0.85rem;
+            color: #666666;
+        }
+
+        .categorias ul {
+            list-style: none;
+        }
+
+        .categorias ul li {
+            margin-bottom: 8px;
+        }
+
+        .categorias ul li a {
+            font-size: 0.9rem;
+            color: #555555;
+            transition: color 0.2s;
+        }
+
+        .categorias ul li a:hover {
+            color: #d9b4ab;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #8a736e;
+            font-size: 0.85rem;
+            border-top: 1px solid #eaeaea;
+            margin-top: 40px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .post img {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -30,12 +246,9 @@
                 <h2>5 Erros de Iniciantes na Costura (e como evitá-los)</h2>
                 <span class="data">Postado em 16 de Junho, 2026 por Maria</span>
                 <p>Começar a costurar é mágico, mas errar a tensão da linha ou cortar o tecido do lado errado pode desanimar. Neste post, separamos as melhores dicas para você começar com o pé direito...</p>
-                
                 <div class="acoes-post">
                     <a href="#" class="btn-ler">Continuar Lendo</a>
-                    <button class="btn-curtir">
-                        ❤️ <span class="contador">0</span>
-                    </button>
+                    <button class="btn-curtir">❤️ <span class="contador">0</span></button>
                 </div>
             </article>
 
@@ -44,12 +257,9 @@
                 <h2>Como Escolher os Tecidos Certos para Roupas de Verão</h2>
                 <span class="data">Postado em 10 de Junho, 2026 por Maria</span>
                 <p>O segredo de um caimento perfeito está na escolha do tecido. Hoje vamos falar sobre o linho, a viscose e o tricoline, e por que eles são os reis da estação mais quente do ano.</p>
-                
                 <div class="acoes-post">
                     <a href="#" class="btn-ler">Continuar Lendo</a>
-                    <button class="btn-curtir">
-                        ❤️ <span class="contador">0</span>
-                    </button>
+                    <button class="btn-curtir">❤️ <span class="contador">0</span></button>
                 </div>
             </article>
 
@@ -59,7 +269,7 @@
             <div class="sobre-mim">
                 <h3>Sobre Mim</h3>
                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Foto da autora">
-                <p>Olá! Sou a Maria, apaixonada por agulhas, tecidos e pela arte de criar o próprio guarda-roupa. Seja bem-vinda ao meu cantinho!</p>
+                <p>Olá! Sou a Maria, apaixonada por agulhas, tecidos e pela arte de criar o próprio guarda-roupa.</p>
             </div>
             <div class="categorias">
                 <h3>Categorias</h3>
@@ -74,210 +284,28 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Linhas & Retalhos. Feito com ❤️ e muita linha.</p>
+        <p>&copy; 2026 Linhas & Retalhos. Feito com amor e muita linha.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.btn-curtir').forEach(function(botao) {
+            let curtiu = false;
+            
+            botao.addEventListener('click', function() {
+                const contador = this.querySelector('.contador');
+                let valor = parseInt(contador.textContent);
+
+                if (!curtiu) {
+                    contador.textContent = valor + 1;
+                    this.classList.add('curtido');
+                    curtiu = true;
+                } else {
+                    contador.textContent = valor - 1;
+                    this.classList.remove('curtido');
+                    curtiu = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
-/* Configurações Gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #fcf8f5;
-    color: #4a4a4a;
-}
-
-/* Cabeçalho */
-header {
-    background-color: #f3e1dc;
-    text-align: center;
-    padding: 40px 20px;
-    border-bottom: 3px dashed #d9b4ab;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    color: #7d5e58;
-    margin-bottom: 5px;
-}
-
-header p {
-    font-style: italic;
-    color: #9e7f77;
-}
-
-nav {
-    margin-top: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #7d5e58;
-    font-weight: bold;
-    margin: 0 15px;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #d9b4ab;
-}
-
-/* Layout Estrutural */
-.container {
-    max-width: 1100px;
-    margin: 40px auto;
-    display: flex;
-    gap: 30px;
-    padding: 0 20px;
-}
-
-/* Área dos Posts */
-.posts {
-    flex: 3;
-}
-
-.post {
-    background: #ffffff;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.post img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-.post h2 {
-    margin: 15px 0 5px 0;
-    color: #5c4440;
-}
-
-.post .data {
-    font-size: 0.85rem;
-    color: #a1a1a1;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.post p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Layout dos Botões no Post */
-.acoes-post {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.btn-ler {
-    display: inline-block;
-    background-color: #d9b4ab;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn-ler:hover {
-    background-color: #7d5e58;
-}
-
-/* Botão de Curtir */
-.btn-curtir {
-    background-color: #f3e1dc;
-    border: 1px solid #d9b4ab;
-    color: #7d5e58;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-}
-
-.btn-curtir:hover {
-    background-color: #d9b4ab;
-    color: white;
-}
-
-.btn-curtir.curtido {
-    background-color: #e26d5c;
-    border-color: #e26d5c;
-    color: white;
-}
-
-/* Barra Lateral (Sidebar) */
-.sidebar {
-    flex: 1;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    height: fit-content;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.sidebar h3 {
-    color: #7d5e58;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #f3e1dc;
-    padding-bottom: 5px;
-}
-
-.sobre-mim img {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-.sobre-mim p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 25px;
-}
-
-.categorias ul {
-    list-style: none;
-}
-
-.categorias ul li {
-    margin-bottom: 10px;
-}
-
-.categorias ul li a {
-    text-decoration: none;
-    color: #5c4440;
-}
-
-/* Rodapé */
-footer {
-    background-color: #5c4440;
-    color: #f3e1dc;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-/* Responsividade para Celular */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .post img {
-        height: 200px;
-    }
-}
